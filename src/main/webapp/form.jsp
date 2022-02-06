@@ -25,7 +25,7 @@
 	</nav>
 
 	<div class="container w-50" style="outline: 1px solid #cccccc;">
-		<form method="post" action="ProjetoFinalServlet">
+		<form method="post" action="ProjetoFinalServletJDBC">
 		 <h1 class="mt-3">Adicionar usuário</h1>
 		 <input type="hidden" name="id" value="${id}">
 		  <div class="mb-3">

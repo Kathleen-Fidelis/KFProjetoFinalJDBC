@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ProjetoFinalServlet
  */
-@WebServlet("/ProjetoFinalServlet")
-public class ProjetoFinalServlet extends HttpServlet {
+@WebServlet("/ProjetoFinalServletJDBC")
+public class ProjetoFinalServletJDBC extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	//private static Container container = new Container();
 	private static UserDAO userDAO = new UserDAO();
@@ -19,7 +19,7 @@ public class ProjetoFinalServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ProjetoFinalServlet() {
+    public ProjetoFinalServletJDBC() {
         super();
         // TODO Auto-generated constructor stub
     }

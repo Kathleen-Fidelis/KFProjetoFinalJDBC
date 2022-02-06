@@ -82,11 +82,10 @@ public class UserDAO {
 		
 		try {
 			PreparedStatement p = con.prepareStatement("update users set nome = ?, email = ?, pais = ? where id = ?");
-			User user = consultarUser(id);
-			p.setString(1, user.getNome());
-			p.setString(2, user.getEmail());
-			p.setString(3, user.getPais());
-			p.setInt(4, user.getId());
+			p.setString(1, nome);
+			p.setString(2, email);
+			p.setString(3, pais);
+			p.setInt(4, id);
 			System.out.println(p);
 			p.executeUpdate();
 			System.out.println("Comando executado");

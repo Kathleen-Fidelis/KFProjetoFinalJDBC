@@ -1,4 +1,4 @@
-<%@page import="com.proj.servlets.ProjetoFinalServlet"%>
+<%@page import="com.proj.servlets.ProjetoFinalServletJDBC"%>
 <%@page import="com.proj.servlets.User"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -51,15 +51,15 @@
 		    </tr>
 		  </thead>
 		  
-		  <c:forEach items="${usuarios}" var="user" varStatus="i">
+		  <c:forEach items="${usuarios}" var="user">
 			  
 			  	<tr>
 			      <td>${user.id}</td>
 			      <td>${user.nome}</td>
 			      <td>${user.email}</td>
 			      <td>${user.pais}</td>
-			      <td><a href="?id=${i.index}&alterar=1">Alterar</a></td>
-			      <td><a href="?id=${i.index}&alterar=0">Remover</a></td>
+			      <td><a href="?id=${user.id}&alterar=1">Alterar</a></td>
+			      <td><a href="?id=${user.id}&alterar=0">Remover</a></td>
 			    </tr>
 		  </c:forEach>
 		</table>
