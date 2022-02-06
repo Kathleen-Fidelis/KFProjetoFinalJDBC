@@ -27,18 +27,18 @@
 	<div class="container w-50" style="outline: 1px solid #cccccc;">
 		<form method="post" action="ProjetoFinalServlet">
 		 <h1 class="mt-3">Adicionar usuário</h1>
-		 <input type="hidden" name="id" value=${id}>
+		 <input type="hidden" name="id" value="${id}">
 		  <div class="mb-3">
 		    <label for="exampleInputNome1" class="form-label">Nome</label>
-		    <input type="text" class="form-control" name="nome" value=${nome}>
+		    <input type="text" class="form-control" name="nome" value="${nome}">
 		  </div>
 		  <div class="mb-3">
 		    <label for="exampleInputEmail1" class="form-label">Email</label>
-		    <input type="email" class="form-control" name="email" value=${email}>
+		    <input type="email" class="form-control" name="email" value="${email}">
 		  </div>
 		  <div class="mb-3">
 		    <label for="exampleInputPais" class="form-label">País</label>
-		    <input type="text" class="form-control" name="pais" value=${pais}>
+		    <input type="text" class="form-control" name="pais" value="${pais}">
 		  </div>
 		  <a href="index.jsp"><button type="submit" class="btn btn-primary col-2 mb-3">Salvar</button></a>
 		</form>

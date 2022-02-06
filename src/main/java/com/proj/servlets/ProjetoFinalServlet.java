@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/ProjetoFinalServlet")
 public class ProjetoFinalServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static Container container = new Container();
+	//private static Container container = new Container();
+	private static UserDAO userDAO = new UserDAO();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -33,9 +34,9 @@ public class ProjetoFinalServlet extends HttpServlet {
 		if(id != null) {
 			
 			if(alterar.equals("0")) {
-				container.deletar(Integer.parseInt(id));
+				userDAO.deletar(Integer.parseInt(id));
 			}else if(alterar.equals("1")) {
-				User user = container.consultar(Integer.parseInt(id));
+				User user = userDAO.consultarUser(Integer.parseInt(id));
 				request.setAttribute("id", user.getId());
 				request.setAttribute("nome", user.getNome());
 				request.setAttribute("email", user.getEmail());
@@ -44,7 +45,7 @@ public class ProjetoFinalServlet extends HttpServlet {
 				request.getRequestDispatcher("/form.jsp").forward(request, response);
 			}
 		}
-		request.setAttribute("usuarios", container.consultar());
+		request.setAttribute("usuarios", userDAO.consultar());
 		request.getRequestDispatcher("/").forward(request, response);
 	}
 
@@ -63,15 +64,15 @@ public class ProjetoFinalServlet extends HttpServlet {
 			String id = request.getParameter("id");
 			
 			if(id != null && !id.isEmpty()) {
-				container.alterar(Integer.parseInt(id), var1, var2, var3);
+				userDAO.alterar(Integer.parseInt(id), var1, var2, var3);
 			}else {
 				User user = new User(var1, var2, var3);
-				container.inserir(user);
+				userDAO.inserir(user);
 			}
 			
 			
 			
-			request.setAttribute("usuarios", container.consultar());
+			request.setAttribute("usuarios", userDAO.consultar());
 			
 		}
 		

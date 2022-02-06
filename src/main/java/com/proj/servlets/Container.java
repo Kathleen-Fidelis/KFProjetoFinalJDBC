@@ -3,6 +3,8 @@ package com.proj.servlets;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class Container {
 
 	private List<User> usuarios = new ArrayList<User>();
@@ -34,5 +36,7 @@ public class Container {
 	public void deletar(int indice) {
 		usuarios.remove(indice);
 	}
+	
+	
 	
 }
